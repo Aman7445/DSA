@@ -4,12 +4,30 @@ using namespace std;
 
 vector<vector<pair<int,int>>> graph;
 
-//weighted graph 
+//Bidirectional weighted graph 
 void addEdge(int u,int v,int wgt){
     graph[u].push_back(make_pair(v,wgt));
     graph[v].push_back(make_pair(u,wgt));
 
 }
+
+void bfs(int src,int vertices){
+    queue<int> que;
+    vector<bool> visited(vertices,false);
+    que.push(src);
+    visited[src]=true;
+    if(!que.empty()){
+        int cn=que.front();
+        que.pop();
+        for(auto nbr:graph[cn]){//checking the neighbours as it is stored as pair
+            if(!visited[nbr.first]){
+                que.push(nbr.first);
+                visited[nbr.first]=true;
+            }
+        }
+    }
+}
+
 void Display(){
     for(auto i: graph){
         if(i.size()==0){
