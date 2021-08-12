@@ -8,6 +8,8 @@ using namespace std;
 #define pb push_back
 #define pob pop_back
 #define all (a.begin,a.end)
+#define vll vector<long long> 
+#define umii unordered_map<int,int> 
 
 int main(){
     ios::sync_with_stdio(false);
