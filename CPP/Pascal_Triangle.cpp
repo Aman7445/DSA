@@ -4,7 +4,8 @@ using namespace std;
 
 int main(){
     int n=5;//size of the triangle
-    int pt[n][n];
+    // int pt[n][n]; using array 
+    vector<vector<int>> pt(n,vector<int>(n));
     for(int i=0;i<n;i++){
         for(int j=0;j<=i;j++){
             if(j==0||i==j){
