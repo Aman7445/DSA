@@ -8,8 +8,7 @@ using namespace std;
 #define vll vector<long long> 
 #define umii unordered_map<int,int> 
 #define FL(i,a,b) for(int i=a;i<b;i++)
-#define and &&
-#define or ||
+#define FLL(i,a,b) for(ll i=a;i<b;i++)
 
 int main(){
     ios::sync_with_stdio(false);
