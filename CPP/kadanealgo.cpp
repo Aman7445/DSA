@@ -10,9 +10,7 @@ int maxSubSum(int arr[]){
     int maxSum=0;
     for(int i=0;i<5;i++){
         currSum+=arr[i];
-        if(currSum>maxSum){
-            maxSum=currSum;
-        }
+        maxSum=max(currSum,maxSum);
         if(currSum<0){
             currSum=0;
         }
