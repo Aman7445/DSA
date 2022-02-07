@@ -18,14 +18,38 @@ int knapsack(int val[],int wt[],int W,int n){
     else{
         return knp[n][W]=knapsack(val,wt,W,n-1);
     }
+    return knp[n][W];
 }
+
+//tabulation
+int tknapsack(int val[],int wt[],int W,int n,vector<vector<int>> t){
+    
+    for(int i=0;i<n+1;i++){
+        for(int j=0;j<W+1;j++){
+            if(i==0||j==0){
+                t[i][j]=0;
+            }
+            if(wt[i-1]<=W){
+                t[i][j]=max(val[i-1]+t[i-1][j-1],t[i-1][j]);
+            }
+            else{
+                t[i][j]=t[i-1][j];
+            }
+        }
+    }
+    return t[n][W];
+}
+
 int main(){
     int n=4;
     int val[n]={1,3,4,5};
     int wt[n]={1,4,5,7};
     int W=7;
+    vector<vector<int>> t;
     int ans=knapsack(val,wt,W,n);
-    cout<<ans;
+    // int ans2=tknapsack(val,wt,W,n,t);
+    cout<<ans<<"\n";
+    // cout<<ans2;
     // for(int i=0;i<p.size();i++){
     //     for(int j=0;j<p[i].size();j++){
     //         cout<<p[i][j]<<" ";
