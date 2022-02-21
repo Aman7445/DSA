@@ -29,6 +29,8 @@ int main(){
     int n=4;
     vector<int> nums={10,20,30,10};
     vector<int> t(n+1);
-    cout<<frogJump(n-1,nums,t);
+    vector<int> dp(n+1);
+    cout<<frogJump(n-1,nums,t)<<"\n";
+    cout<<frogJumptab(n-1,nums,dp);
     return 0;
 }
